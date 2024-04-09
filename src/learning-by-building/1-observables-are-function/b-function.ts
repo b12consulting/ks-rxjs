@@ -10,7 +10,7 @@ interface Observer<T> {
  * A function that takes a simple object with callbacks
  * and does something with them.
  */
-export const source = (observer: Observer<number>) => {
+export const observable = (observer: Observer<number>) => {
   observer.next(1);
   observer.next(2);
   observer.next(3);
@@ -19,7 +19,7 @@ export const source = (observer: Observer<number>) => {
 
 // Usage
 console.log("start");
-source({
+observable({
   next: console.log,
   complete: () => console.log("done"),
 });

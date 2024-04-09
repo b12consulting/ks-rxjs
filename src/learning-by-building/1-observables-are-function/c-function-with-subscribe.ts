@@ -12,7 +12,7 @@ class Observable<T> {
 }
 
 // Usage
-export const source = new Observable<number>((subscriber) => {
+export const observable = new Observable<number>((subscriber) => {
   subscriber.next(1);
   subscriber.next(2);
   subscriber.next(3);
@@ -20,7 +20,7 @@ export const source = new Observable<number>((subscriber) => {
 });
 
 console.log("start");
-source.subscribe({
+observable.subscribe({
   next: console.log,
   complete: () => console.log("done"),
 });

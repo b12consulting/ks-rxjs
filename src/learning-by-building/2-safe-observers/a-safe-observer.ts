@@ -49,7 +49,7 @@ class Observable<T> {
 
 // Usage
 // Now 4 won't be nexted after we complete.
-const source = new Observable<number>((observer) => {
+export const observable = new Observable<number>((observer) => {
   observer.next(1);
   observer.next(2);
   observer.next(3);
@@ -57,4 +57,4 @@ const source = new Observable<number>((observer) => {
   observer.next(4); // this does nothing.
 });
 
-source.subscribe({ next: console.log, complete: () => console.log("done") });
+observable.subscribe({ next: console.log, complete: () => console.log("done") });

@@ -1,27 +1,29 @@
 import { Observable } from "rxjs";
 import { fromArrayLike } from "rxjs/internal/observable/innerFrom";
 /**
+ * For the curious, here is the real implementation of "rxjs.of()",
+ * which eventually calls "fromArrayLike" to do the real work.
  * RxJS "fromArrayLike" warns that "reentrant code can alter the array we're looping over".
  * Here is an illustration of the kind of bug this warning is about.
  */
 
-const valueSource = [1, 2, 3];
+const source = [1, 2, 3];
 
-const source = new Observable<number>((observer) => {
+const observable = new Observable<number>((observer) => {
   // Note the usage of "for" loop instead of "forEach". This is for performance reasons, cfr.
   // https://benlesh.com/posts/forEach-is-a-code-smell/
-  for (let i = 0; i < valueSource.length; i++) {
-    observer.next(valueSource[i]);
+  for (let i = 0; i < source.length; i++) {
+    observer.next(source[i]);
   }
   observer.complete();
 });
 
 // Usage
 console.log("start");
-source.subscribe({
+observable.subscribe({
   next: (value) => {
     console.log(value);
-    valueSource.push(-1);
+    source.push(-1);
   },
   complete: () => console.log("done"),
 });

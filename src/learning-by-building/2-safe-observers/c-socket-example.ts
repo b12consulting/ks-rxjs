@@ -1,4 +1,4 @@
-import { Observable } from "./a-safe-observer";
+import { Observable } from "./b-note-on-error";
 
 const helloSocket = new Observable<string>((subscriber) => {
   // Open a socket.
