@@ -66,6 +66,8 @@ export class Observable<T> {
  * A definition to allow checking implementation details of the RxJS library.
  * Calling "new Subscriber()" is deprecated and should not be done in real code.
  */
-/* const s = new Subscriber();
-// cmd click on the "error" method to see implementation details: the flag "isStopped" is switched to true.
-s.error(); */
+function allowingCmdClick() {
+  const s = new Subscriber();
+  // cmd click on the "error" method to see implementation details: the flag "isStopped" is switched to true.
+  s.error(new Error("checking error implementation details"));
+}
