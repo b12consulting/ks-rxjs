@@ -49,7 +49,7 @@ class Observable<T> {
 
 // Usage
 // Now 4 won't be nexted after we complete.
-export const source = new Observable<number>((observer) => {
+const source = new Observable<number>((observer) => {
   observer.next(1);
   observer.next(2);
   observer.next(3);

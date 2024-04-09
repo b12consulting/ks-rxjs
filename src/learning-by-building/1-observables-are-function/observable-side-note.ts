@@ -1,4 +1,5 @@
 import { Observable } from "rxjs";
+import { fromArrayLike } from "rxjs/internal/observable/innerFrom";
 /**
  * RxJS "fromArrayLike" warns that "reentrant code can alter the array we're looping over".
  * Here is an illustration of the kind of bug this warning is about.
@@ -36,3 +37,8 @@ const valueSourceStronglyConstant = [1, 2, 3] as const;
  */
 // valueSourceReadonly1.push(-1)
 // valueSourceReadonly1[0] = -1;
+
+/**
+ * For the implementation detail of "fromArrayLike", cmd click on the following
+ */
+const x = fromArrayLike([1, 2, 3]);
