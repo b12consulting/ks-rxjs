@@ -40,7 +40,7 @@ class Observable<T> {
   constructor(private _wrappedFunc: (safeObserver: SafeObserver<T>) => void) {}
 
   subscribe(observer: Observer<T>): void {
-    // We can wrap our observer in a "safe subscriber" that
+    // We can wrap our observer in a "safe observer" that
     // does the work of making sure it's not closed.
     const safeObserver = new SafeObserver(observer);
     this._wrappedFunc(safeObserver);
@@ -57,4 +57,7 @@ export const observable = new Observable<number>((observer) => {
   observer.next(4); // this does nothing.
 });
 
-observable.subscribe({ next: console.log, complete: () => console.log("done") });
+observable.subscribe({
+  next: console.log,
+  complete: () => console.log("done"),
+});

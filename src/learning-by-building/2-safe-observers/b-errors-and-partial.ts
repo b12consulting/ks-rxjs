@@ -54,7 +54,7 @@ export class SafeObserver<T> {
 export class Observable<T> {
   constructor(private _wrappedFunc: (safeObserver: SafeObserver<T>) => void) {}
 
-  subscribe(observer: Observer<T>): void {
+  subscribe(observer: Partial<Observer<T>>): void {
     // We can wrap our observer in a "safe subscriber" that
     // does the work of making sure it's not closed.
     const safeObserver = new SafeObserver(observer);
