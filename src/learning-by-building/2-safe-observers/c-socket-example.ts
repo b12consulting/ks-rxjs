@@ -1,4 +1,5 @@
 import { Observable } from "./b-note-on-error";
+import WebSocket from "ws";
 
 const helloSocket = new Observable<string>((subscriber) => {
   // Open a socket.
@@ -12,7 +13,7 @@ const helloSocket = new Observable<string>((subscriber) => {
   socket.onmessage = (e) => {
     // When it echoes the text back (in the case of this particular server)
     // notify the consumer.
-    subscriber.next(e.data);
+    subscriber.next(e.data.toString());
   };
 
   socket.onclose = (e) => {
