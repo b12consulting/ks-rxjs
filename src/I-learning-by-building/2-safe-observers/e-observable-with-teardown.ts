@@ -1,3 +1,4 @@
+import { delay, map, of, switchMap } from "rxjs";
 import { Observer } from "./b-errors-and-partial";
 
 /**
@@ -73,6 +74,7 @@ const observable = new Observable<number>((observer) => {
   observer.next(2);
   observer.next(3);
   observer.complete();
+
   return () => void 0;
 });
 
@@ -84,7 +86,7 @@ const subscription = observable.subscribe({
 });
 /**
  * Useless call, unsubscribe has already been called.
- * Note that at the moment, there is no mechanism to unsubscribe early from this synchronous observable.
+ * But try it out with an asynchronous version of "observable".
  */
 subscription.unsubscribe();
 console.log("stop");
