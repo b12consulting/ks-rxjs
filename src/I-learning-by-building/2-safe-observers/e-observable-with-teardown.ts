@@ -1,4 +1,3 @@
-import { delay, map, of, switchMap } from "rxjs";
 import { Observer } from "./b-errors-and-partial";
 
 /**
@@ -69,7 +68,7 @@ export class Observable<T> {
   }
 }
 
-const observable = new Observable<number>((observer) => {
+export const observable = new Observable<number>((observer) => {
   observer.next(1);
   observer.next(2);
   observer.next(3);
@@ -77,16 +76,3 @@ const observable = new Observable<number>((observer) => {
 
   return () => void 0;
 });
-
-// Usage
-console.log("start");
-const subscription = observable.subscribe({
-  next: console.log,
-  complete: () => console.log("done"),
-});
-/**
- * Useless call, unsubscribe has already been called.
- * But try it out with an asynchronous version of "observable".
- */
-subscription.unsubscribe();
-console.log("stop");
