@@ -10,8 +10,11 @@ import { fromArrayLike } from "rxjs/internal/observable/innerFrom";
 const source = [1, 2, 3];
 
 const observable = new Observable<number>((observer) => {
-  // Note the usage of "for" loop instead of "forEach". This is for performance reasons, cfr.
-  // https://benlesh.com/posts/forEach-is-a-code-smell/
+  /**
+   * Note the usage of "for" loop instead of "forEach". This is for performance reasons, cfr.
+   * https://benlesh.com/posts/forEach-is-a-code-smell/
+   * Do not follow this advice in your projects!
+   */
   for (let i = 0; i < source.length; i++) {
     observer.next(source[i]);
   }

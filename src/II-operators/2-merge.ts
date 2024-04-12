@@ -1,7 +1,7 @@
 import {
   Observable,
   Subscription,
-} from "../I-learning-by-building/2-safe-observers/e-observable-with-teardown";
+} from "../I-learning-by-building/2-observables-enhancement/e-observable-with-teardown";
 
 const interval = (ms: number) =>
   new Observable<number>((observer) => {
