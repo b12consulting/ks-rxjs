@@ -3,12 +3,6 @@
   "version": "1.0.0",
   "description": "Knowledge Sharing on RxJS",
   "main": "index.ts",
-  "scripts": {
-    "1a": "ts-node src/learning-by-building/1-observables-are-function/a-observable.ts",
-    "1b": "ts-node src/learning-by-building/1-observables-are-function/b-function.ts",
-    "1c": "ts-node src/learning-by-building/1-observables-are-function/c-function-with-subscribe.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "Thierry Stulemeijer",
   "license": "ISC",
   "dependencies": {
