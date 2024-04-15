@@ -25,7 +25,7 @@ console.log("stop");
 
 /**
  * Note: in RxJS, operators are applied via the pipe method:
- * observable.pipe(op1, op2) -> eventually transformed to -> op2(op1(observable)).
+ * observable.pipe(op1, op2) -... (eventually transformed to) ...-> op2(op1(observable)).
  * It is recommended to always use "pipe", even when having only one operator, see
  * https://rxjs.dev/guide/operators#piping
  */
@@ -39,5 +39,4 @@ console.log("stop");
 
 /**
  * talk about channels as presented in https://benlesh.com/posts/rxjs-operators-in-depth-part-2/
- * talk about higher-order observables
  */

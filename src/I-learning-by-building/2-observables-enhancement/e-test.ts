@@ -1,6 +1,5 @@
 import { observable } from "./e-observable-with-teardown";
 
-// Usage
 console.log("start");
 const subscription = observable.subscribe({
   next: console.log,

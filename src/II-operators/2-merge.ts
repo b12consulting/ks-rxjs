@@ -16,7 +16,7 @@ const interval = (ms: number) =>
  * Note that in the implementation of mergeMap, the RxJS library must somewhere take care of unsubscribing all inner subscriptions.
  * Unfortuntely, I couldn't quite track down where this actually happen.
  */
-const mergeInterval = (source: Observable<number>) =>
+const mergeToInterval = (source: Observable<number>) =>
   new Observable((observer) => {
     const innerSubs: Subscription[] = [];
     const subscription = source.subscribe({
@@ -37,5 +37,5 @@ const mergeInterval = (source: Observable<number>) =>
     };
   });
 
-const sub = mergeInterval(interval(3_000)).subscribe({ next: console.log });
+const sub = mergeToInterval(interval(3_000)).subscribe({ next: console.log });
 setTimeout(() => sub.unsubscribe(), 13_000);

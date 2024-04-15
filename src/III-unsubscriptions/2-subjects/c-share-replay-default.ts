@@ -2,6 +2,7 @@ import { interval, shareReplay, take, tap } from "rxjs";
 
 const replayed = interval(1000).pipe(
   tap((index) => console.log(`tap console: ${index}`)),
+  take(3),
   shareReplay(1)
 );
 

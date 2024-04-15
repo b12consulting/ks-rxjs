@@ -6,7 +6,7 @@ import { source, toInterval } from "./a-setup";
 const higherOrder = source.pipe(map(toInterval));
 /**
  * Merging all observed values.
- * i.e. every time the "source" emits a value, we subscribe to the a new "toInterval" observable.
+ * i.e. every time the "source" emits a value, we subscribe to a new "toInterval" observable.
  * Previous subscriptions live on, so everything is "merged".
  */
 const merge = higherOrder.pipe(mergeAll());
