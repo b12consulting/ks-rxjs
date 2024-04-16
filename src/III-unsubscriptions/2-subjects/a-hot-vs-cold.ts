@@ -1,4 +1,4 @@
-import { Observable, Subject, interval, takeUntil, timer, share } from "rxjs";
+import { Observable, Subject, interval, takeUntil, timer } from "rxjs";
 /**
  * Observable just link a "producer" to an "observer".
  * Question: do you want to restart the producer when subscribing or not?
@@ -30,7 +30,7 @@ const coldObservable = new Observable((observer) => {
  * 1. Observables: can subscribe to them as for Observables.
  * 2. Observers: They have the "next, error, complete" channels.
  * 3. Multicasts: all observers passed to it via `subscribe()` are added to an internal observers list.
- * 4. Passes value through itself: Subject.next() values are passed to subscribed observers.
+ * 4. Passes value through itself: `Subject.next()` values are passed to subscribed observers.
  */
 const hotProducer = new Subject();
 /**

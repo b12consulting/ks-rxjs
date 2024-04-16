@@ -1,4 +1,4 @@
-import { connectable, interval, take, takeUntil, timer } from "rxjs";
+import { connectable, interval, take } from "rxjs";
 
 /**
  * To turn an observable into a hot one, use one of the following
@@ -40,5 +40,5 @@ setTimeout(() => connection.unsubscribe(), 13_000);
 
 /**
  * Managing connection by hand is not advisable.
- * Use the higly customizable "share()" operator in production code.
+ * Use the highly customizable "share()" operator in production code.
  */

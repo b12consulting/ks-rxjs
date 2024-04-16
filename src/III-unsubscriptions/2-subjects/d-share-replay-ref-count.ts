@@ -1,4 +1,4 @@
-import { interval, shareReplay, take, tap } from "rxjs";
+import { interval, shareReplay, take } from "rxjs";
 
 /**
  * The documentation of shareReplay clearly documents why refCount is false by default.
