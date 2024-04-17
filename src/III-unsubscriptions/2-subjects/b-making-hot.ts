@@ -7,6 +7,7 @@ import { connectable, interval, take } from "rxjs";
  * - the "share" operator
  *
  * (side note: "shareReplay" is just syntactic sugar to call "share")
+ * In most use cases, one just needs "share"/"shareReplay"
  */
 
 const coldObservable = interval(1000);
