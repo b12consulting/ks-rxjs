@@ -8,9 +8,8 @@ import { Observable } from "rxjs";
 
 const observable = new Observable<number>((observer) => {
   /**
-   * You can wrap any combination of line in this function body.
-   * So the execution context is arbitrary, try it out.
-   * As it stands here, this code is synchronous.
+   * You can wrap any combination of the lines in this function body in a "setTimeout".
+   * So the execution context is arbitrary. As it stands here, this code is synchronous.
    */
   observer.next(1);
   observer.next(2);
