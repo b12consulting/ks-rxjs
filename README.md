@@ -13,6 +13,10 @@ To execute the code in any of the files, run
 npx ts-node path/to/file.ts
 ```
 
+Links to ks resources:
+- confluence page: https://b12-consulting.atlassian.net/wiki/spaces/B12KC/pages/2331475969/RxJS+Observables
+- presentation recording: https://drive.google.com/file/d/1KYQpZ_uQrwjMX1tDYRZcYrkkcaFX4RxM/view?usp=sharing
+
 # Code organisation
 
 In "I-learning-by-building" and "II-operators", we rebuild the RxJS library from scratch without relying in any way on RxJS.
