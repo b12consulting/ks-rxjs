@@ -13,6 +13,12 @@ To execute the code in any of the files, run
 npx ts-node path/to/file.ts
 ```
 
+# Code organisation
+
+In "I-learning-by-building" and "II-operators", we rebuild the RxJS library from scratch without relying in any way on RxJS.
+
+Starting from "III-unsubscriptions", we use the RxJS library.
+
 # Debugging examples
 
 Debugging can be difficult when executing code with ts-node, because errors are sometimes hidden by ts-node execution.
@@ -36,9 +42,3 @@ The code in II-operators/1-double.ts is taken from https://benlesh.com/posts/rxj
 Parts of III-unsubscriptions/2-subjects/a-hot-vs-cold.ts is taken from https://benlesh.medium.com/hot-vs-cold-observables-f8094ed53339.
 
 "IV-common-frp-glitches" is adapted from https://github.com/raquo/Airstream?tab=readme-ov-file#frp-glitches.
-
-# Code organisation
-
-In "I-learning-by-building" and "II-operators", we rebuild the RxJS library from scratch without relying in any way on RxJS.
-
-Starting from "III-unsubscriptions", we use the RxJS library.
